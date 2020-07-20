@@ -105,6 +105,10 @@ table {
     width: 60%;
 }
 
+.tds{
+    text-align: center;
+}
+
 td button {
     background-color: #fadf63;
     width: 150px;
