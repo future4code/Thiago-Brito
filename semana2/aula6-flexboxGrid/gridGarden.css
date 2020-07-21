@@ -1,0 +1,88 @@
+
+/*lvl1*/
+grid-column-start: 3;
+
+/*lvl2*/
+grid-column-start:5;
+
+/*lvl3*/
+grid-column-end: 4;
+
+/*lvl4*/
+grid-column-end:2;
+
+/*lvl5*/
+grid-column-end:-2;
+
+/*lvl6*/
+grid-column-start: -3;
+
+/*lvl7*/
+grid-column-end: span 2;
+
+/*lvl8*/
+grid-column-end: span 5;
+
+/*lvl9*/
+grid-column-start: span 3;
+
+/*lvl10*/
+grid-column: 4/6;
+
+/*lvl11*/
+grid-column: span 3/5;
+
+/*lvl12*/
+grid-row-start: 3;
+
+/*lvl13*/
+grid-row: 3/6;
+
+/*lvl14*/
+grid-column:2;
+grid-row:5;
+
+/*lvl15*/
+grid-column: 2/6;
+grid-row: 1/6;
+
+/*lvl16*/
+grid-area: 1/2/4/6
+
+/*lvl17*/
+grid-area: 2/3/5/6
+
+/*lvl18*/
+order: 1;
+
+/*lvl19*/
+order:-1;
+
+/*lvl20*/
+grid-template-columns: 50%
+
+/*lvl21*/
+grid-template-columns: repeat(8, 12.5%);
+
+/*lvl22*/
+grid-template-columns: 100px 3em 40%;
+
+
+/*lvl23*/
+grid-template-columns: 1fr 5fr;
+
+/*lvl24*/
+grid-template-columns: 50px 1fr 1fr 1fr 50px;
+
+/*lvl25*/
+grid-template-columns:75px 3fr 2fr;
+
+/*lvl26*/
+grid-template-rows: 50px 0fr 0fr 0fr;
+
+/*lvl27*/
+grid-template: 60% 60% 60% / 200px;
+
+/*lvl28*/
+grid-template: 1fr 50px / 20% 80%;
+

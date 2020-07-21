@@ -1,0 +1,91 @@
+/* lvl 1*/
+justify-content: flex-end
+
+/*lvl 2*/
+justify-content: center;
+
+/*lvl 3*/
+justify-content:space-around;
+
+/*lvl 4*/
+justify-content:space-between;
+
+/*lvl 5*/
+align-items:flex-end;
+
+/*lvl 6*/
+justify-content:center;
+align-items:center;
+
+/*lvl7*/
+justify-content:space-around;
+align-items:flex-end;
+
+/*lvl8*/
+flex-direction:row-reverse;
+
+/*lvl9*/
+flex-direction:column;
+
+
+/*lvl10*/
+flex-direction:row-reverse;
+justify-content:flex-end;
+
+/*lvl11*/
+flex-direction:column;
+justify-content:flex-end;
+
+
+/*lvl12*/
+flex-direction:column-reverse;
+justify-content:space-between;
+
+/*lvl13*/
+flex-direction:row-reverse;
+justify-content:center;
+align-items:flex-end;
+
+/*lvl14*/
+order:3
+
+/*lvl15*/
+order:-1
+
+/*lvl16*/
+align-self:flex-end;
+
+/*lvl17*/
+order:1;
+align-self:flex-end;
+
+/*lvl18*/
+flex-wrap:wrap;
+
+/*lvl19*/
+flex-direction:column;
+flex-wrap: wrap;
+
+/*lvl20*/
+flex-flow:column wrap;
+
+/*lvl21*/
+align-content:flex-start;
+
+/*lvl22*/
+align-content:flex-end;
+
+/*lvl23*/
+flex-direction:column-reverse;
+align-content:center;
+
+/*lvl24*/
+flex-flow:column-reverse wrap-reverse;
+justify-content:center;
+align-items:flex-start;
+align-content:space-between;
+
+
+
+
+
