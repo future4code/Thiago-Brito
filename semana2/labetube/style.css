@@ -1,0 +1,101 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+a:hover{
+    background-color:cornflowerblue ;
+}
+h1{
+    display:flex;
+    color:white;
+}
+header{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    background-color: rgb(235, 73, 23);
+    justify-content:space-around;
+    margin-bottom: 1vh;
+}
+#buscador{
+    display:flex;
+    height: 2vh;
+    width: 5vw;
+    align-self: center;
+
+}
+#main-index{
+    height: 80vh;
+    width: 100vw;
+    display: grid;
+    background-color:darkgray;
+    grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    margin-bottom: 1vh;
+}
+#mvideo{
+    height: 80vh;
+    width: 100vw;
+    display: grid;
+    background-color:darkgray;
+    grid-template-columns: 1fr;
+    margin-bottom: 1vh;
+}
+#mvideo2{
+    height: 80vh;
+    width: 100vw;
+    display: grid;
+    background-color:darkgray;
+    grid-template-columns: 1fr;
+    margin-bottom: 1vh;
+}
+
+.thumbnails{
+    width: 20vw;
+    height: 30vh;
+    margin: 3vh;
+}
+.titulos{
+    text-align: center;
+    display: inline;
+    color: rgb(235, 73, 23);
+}
+
+
+.videos{
+    width: 70vw;
+    height: 60vh;
+    justify-self: center;
+}
+footer{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: cornflowerblue;
+
+}
+#redessociais{
+    text-align: center;
+    display: flex;
+    font-size: 32px;
+    text-align: center;
+    color: white;
+
+}
+.facebook{
+    display: flex;
+    width:5vw;
+    height: 5vh;
+    margin-top: 1vh;
+}
+.instagram{
+    display: flex;
+    width:5vw;
+    height: 5vh;
+    margin: 1vh;
+}
+#labegif{
+height: 8vh;
+}
