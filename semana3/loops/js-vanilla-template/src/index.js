@@ -16,13 +16,13 @@
 // Exercicios de escrita de codigo
 // Exercicio 3
 // a)
-const array = [15, 36, 12, 56, 13, 37, 4, 21, 10]
+// const array = [15, 36, 12, 56, 13, 37, 4, 21, 10]
 // for (let numero of array){
-//console.log(numero)
-//}
+// console.log(numero)
+// }
 // b)
 // for (let numero of array){
-//     console.log(numero / 2)
+//     console.log(numero / 10)
 // }
 // c)
 // for (let paresArray of array){
@@ -31,3 +31,17 @@ const array = [15, 36, 12, 56, 13, 37, 4, 21, 10]
 // }
 // }
 // d)
+// for (let i=0; i < array.length; i++){
+//     console.log(`O elemento do index ${i} é ${array[i]}`)
+// }
+// // e)
+    // let maior = array[0]
+    // let menor = array[0]
+    // for (let numero of array){
+    //     if (numero > maior){
+    //         maior = numero
+    //     }
+    //     else if (numero < menor)
+    //         menor = numero
+    // }
+    // console.log(`O maior numero é ${maior} e o menor é ${menor}`)
