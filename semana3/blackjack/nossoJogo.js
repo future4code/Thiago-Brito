@@ -12,28 +12,24 @@
  */
 console.log("Bem vindo ao jogo de Blackjack!")
 if(confirm("Quer iniciar uma nova rodada?")){
+
    const carta = comprarCarta();
    let cartasUsuario = comprarCarta()
    let cartasUsuario2 = comprarCarta()
    let cartaComputador = comprarCarta()
    let cartaComputador2 = comprarCarta()
-   let pontosUsuario = cartasUsuario +  cartasUsuario2
-   let pontosComputador = cartaComputador + cartaComputador2
+   let pontosUsuario = cartasUsuario.valor +  cartasUsuario2.valor
+   let pontosComputador = cartaComputador.valor + cartaComputador2.valor
 
 console.log( "Usuário - cartas: ", cartasUsuario.texto, cartasUsuario2.texto, "- Pontuação", cartasUsuario.valor + cartasUsuario2.valor ) 
 console.log( "Computador - cartas: ", cartaComputador.texto, cartaComputador2.texto, "- pontuação", cartaComputador.valor + cartaComputador2.valor)
-if(pontosUsuario > pontosComputador){
-      console.log("O usuário ganhou!")
-} else if(pontosUsuario = pontosComputador){
-      console.log("Empate!")
-} else (pontosUsuario < pontosComputador)
-
-
-
-
-
-
-
-
-   console.log("O jogo acabou")
+if(pontosUsuario === pontosComputador ){
+   console.log("empatou!")
+} else if(pontosUsuario > pontosComputador){
+   console.log("Usuário venceu!")
+} else if(pontosUsuario < pontosComputador){
+   console.log("Computador venceu!")
+}
+} else{
+   console.log("O jogo acabou!")
 }
