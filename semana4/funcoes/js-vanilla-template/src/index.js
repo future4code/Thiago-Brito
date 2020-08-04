@@ -47,6 +47,48 @@
     // let numero2= 2
     // funcao2()
 // c-
+// function funcao3(banana) {
+//     for (i=0; i <= 10; i++) {
+//         console.log(i, banana)
+// }
+// }
+// let fruta = "bananinha"
+// const frutas = funcao3(fruta)
+// Exercicio 6
+// -a
 
- 
-  
+// function verArray(arrayOutput){
+//     return arrayOutput.length
+// } 
+// const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+
+// const numeroArray = verArray(array)
+// console.log(`O numero de elementos é ${numeroArray}`)
+// -b
+//     function pares(numero){
+//         if (numero % 2 === 0){
+//             return true
+//         }    
+//         else if (numero % 2 === 1){
+//             return false
+//         }
+//     }    
+// let numeroUsuario = prompt("digite um numero")
+// let check = pares (numeroUsuario)
+// console.log(`o número ${numeroUsuario} é par? ${check} `)
+
+// -c
+// const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+// function verificaN(array){
+// let pares = 0
+//     for (let numeros of array){
+//         if(numeros % 2 === 0){
+//             pares++
+//         }
+//     }
+//     return pares
+// }
+// const resultado = verificaN(array)
+// console.log(resultado)
+
+// -d
