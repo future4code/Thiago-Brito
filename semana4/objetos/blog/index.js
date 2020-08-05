@@ -1,5 +1,5 @@
 arrayDeObjetos = []
-function dataStorage(){
+function dataStorage(event){
     const tituloPost = document.getElementById("titulo-post")
     const autorPost = document.getElementById("autor-post")
     const conteudoPost = document.getElementById("conteudo-post")
@@ -16,13 +16,13 @@ function dataStorage(){
     tituloPost.value = ""
     autorPost.value = ""
     conteudoPost.value = ""
+}
     
-    function apertouBotao(evento){  
-        const containerPost = document.getElementById("container-de-posts")
-        containerPost.innerHTML += `<p>${tituloPost.value}<p> <p>${autorPost.value}</p> <p>${conteudoPost.value}</p>`
-    
+    function apertouBotao(){  
         dataStorage()
+        const containerPost = document.getElementById("container-de-posts")
+        containerPost.innerHTML += `<p>${arrayDeObjetos[0].titulo}<p> <p>${arrayDeObjetos[0].autor}</p> <p>${arrayDeObjetos[0].conteudo}</p>`
+        
     }
     
     
-}
