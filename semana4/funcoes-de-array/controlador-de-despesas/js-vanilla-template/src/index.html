@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script defer src="index.js"></script>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section id="secao1">
+      <h1>Controlador de Despesas</h1>
+        <label for="valor">Valor</label>
+        <input type="text" id="valor">
+        <label for="tipoDespesa">Tipo(Aluguel, Mercado, Energia):</label>
+        <select name="despesas" id="tipo">
+            <option value="Alugel">Aluguel</option>
+            <option value="Mercado">Mercado</option>
+            <option value="Energia">Energia</option>
+        </select>
+        <label for="Descrição">Descrição </label>
+        <input type="text" id="descricao">
+        <button id=add-despesa onclick=despesaInput()>Cadastrar Despesa </button>
+    </section>
+
+    <section id="secao2">
+      <h1>Despesas Detalhadas</h1>
+        <select name="d" id="tipo2">
+          <option value="Alugel">Aluguel</option>
+          <option value="Mercado">Mercado</option>
+          <option value="Energia">Energia</option>
+       </select>
+        <label for="Valor-Mínimo">Valor Mínimo:</label>
+        <input type="text" id="valorMin">
+        <label for="valor">Valor máximo</label>
+        <input type="text" id="valorMax">
+        <button>Filtrar </button>
+        <button>Limpar Filtros</button>
+    </section>
+
+    <section id="secao3">
+      <h1>Extrato</h1>
+      <h2>Valor Total</h2>
+    </section>
+    <section id=secao4>
+      
+    </section>
+  </body>
+</html>
