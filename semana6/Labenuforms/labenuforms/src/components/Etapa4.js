@@ -4,7 +4,7 @@ class Etapa4 extends React.Component{
         return(
             <div>
                 <h1>O formulário acabou</h1>
-                <p>Muito obrigado por participar! Entraremos em contato</p>
+                <p>Muito obrigado por participar! Entraremos em contato!</p>
             </div>
         )
     }
