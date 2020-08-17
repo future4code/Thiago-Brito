@@ -4,12 +4,14 @@ class Etapa3 extends React.Component{
         return(
             <div>
                 <h1>Etapa3 - Informações Gerais de Ensino</h1>
-                <input type="text">5 - Por que você não terminou um curso de graduação?</input>
-                <input type="text">6 - Você fez algum curso complementar?</input>
-                <option>
-
-                </option>
-                
+                <h3>5 - Por que você não terminou um curso de graduação?</h3>
+                <input></input>
+                <h3>6 - Você fez algum curso complementar?</h3>
+                <select>
+                    <option>nenhum</option>
+                     <option>curso técnico</option>
+                     <option>curso de ingles</option>
+                </select>
             </div>
         )
     }

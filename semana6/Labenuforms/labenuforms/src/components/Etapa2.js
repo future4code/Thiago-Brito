@@ -4,8 +4,10 @@ class Etapa2 extends React.Component{
         return(
             <div>
                 <h1>Etapa2-Informações do Ensino Superior</h1>
-                    <input type="text">5-Qual Curso?</input>
-                    <input type="text">6-Qual Unidade de Ensino?</input>
+                    <h3>5-Qual Curso?</h3>
+                    <input type="text">ola</input>
+                    <h3>6-Qual Unidade de Ensino?</h3>
+                    <input type="text"></input>
             </div>
 
         );
