@@ -24,7 +24,7 @@ class App extends React.Component {
         {
         id:Date.now(),
         texto:'lavar louça', 
-        completa:false
+        completa:true
       },
 
       {
@@ -38,11 +38,15 @@ class App extends React.Component {
     }
 
   componentDidUpdate() {
+    const objetoTarefas = this.state.tarefas  
+    localStorage.setItem("tarefas", JSON.stringify(objetoTarefas))
 
   };
 
   componentDidMount() {
-
+    const usuarioString = localStorage.getItem("tarefas");
+    const tarefasObjeto = JSON.parse(usuarioString);
+    this.setState({tarefas:tarefasObjeto});
   };
 
   onChangeInput = (event) => {
@@ -73,7 +77,7 @@ class App extends React.Component {
   }
 
   onChangeFilter = (event) => {
-
+    this.setState({filtro:event.target.value})
   }
 
   render() {
