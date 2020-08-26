@@ -1,23 +1,20 @@
-// export class UsersList extends React.Component {
-//     constructor(props) {
-//       super(props);
-//       this.state = {};
-//     }
+import React from "react";
+import axios from "axios";
+// import { baseUrl, axiosConfig } from "../constants/axiosConstants";
+export default class ListaDeUsuarios extends React.Component {
+
+    state = {
+        valorNome: "",
+        valorEmail: ""
+    }
   
-//     render() {
-//       return (
-//         <UserList>
-//           <h2>Usuários Cadastrados:</h2>
-//           {this.props.users.map(user => (
-//             <UserListItem key={user.id}>
-//               {user.name}{" "}
-//               <DeleteButton onClick={() => this.props.onDeleteUser(user.id)}>
-//                 X
-//               </DeleteButton>
-//             </UserListItem>
-//           ))}
-//         </UserList>
-//       );
-//     }
-//   }
+    render() {
+      return (  
+        <div>
+            <h1>Usuarios</h1>
+        </div>
+
+      );
+    }
+}
   
