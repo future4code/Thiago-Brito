@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.044), rgba(255,255,255,0.1)),url(./img/bground1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 90vh;
+ 
 }
 
 .App-logo {

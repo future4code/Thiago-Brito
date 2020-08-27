@@ -1,8 +1,17 @@
 import React from 'react';
-import axios from "axios"
-import styled from "styled-components"
+// import axios from "axios"
 import ListaDeUsuarios from "./components/ListaDeUsuarios"
 import FormularioUsuario from "./components/FormularioUsuario"
+import styled from "styled-components"
+import {Button} from '@material-ui/core'
+import withstyles  from "@material-ui/core/styles"
+const DivApp = styled.div`
+   display:grid;
+  grid-template: 1fr;
+  align-content:center;
+  justify-content:center;
+  margin-top:10px;
+  `
 
 export default class App extends React.Component {
  state = {
@@ -27,8 +36,9 @@ export default class App extends React.Component {
     return(
       <div>
         {paginaAtual()}
-
-        <button onClick={this.mudaPagina}>Mudar Pagina</button>
+        <DivApp>
+        <Button variant="contained" color="secondary" onClick={this.mudaPagina}>Mudar Pagina</Button>
+        </DivApp>
       </div>
     );
   }
