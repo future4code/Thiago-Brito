@@ -1,8 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
- class App extends React.Component{
+import React from 'react';
+// import './App.css';
+
+export default class ListarPlaylist extends React.Component{
    state ={
 
    }
@@ -17,5 +17,3 @@ import './App.css';
   }
 
 }
-
-export default App;

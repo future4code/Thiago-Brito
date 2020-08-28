@@ -1,28 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import axios from "axios"
-import './App.css';
+import axios from "axios";
+import {create, config} from "../constants/constants";
 
- class App extends React.Component{
-   state ={
+export default class CriarPlaylist extends React.Component{
+  state = {
     nome:"",
    }
    onChangeName = (event) => {
     this.setState({ nome: event.target.value});
-   
-   criarPlaylist = () => {
+   }
+   criarPlayList = () => {
        const body = {
-         name:"this.state.nome"
-       }
+         name:this.state.nome
+       };
        axios
        .post(create,body,config)
        .then((resposta)=>{
-         this.setState({nome:""});
+            console.log(resposta) 
+        this.setState({nome:""});
+
        })
        .catch((error)=>{
          console.log(error.message);
        });
-   };
+   }  
 
   render(){
     return (
@@ -31,13 +32,10 @@ import './App.css';
         value={this.state.nome}
         onChange={this.onChangeName}
         placeholder="Adicionar Playlist"
-        >
-
-        </input>
+        />
+        <button onClick={this.criarPlayList}>Criar Nova Playlist</button>
       </div>
     );
   }
+  }  
 
-}
-
-export default CriarPlaylist;

@@ -1,21 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {create, config} from "./constants/constants"
+import CriarPlaylist from './components/CriarPlaylist';
+import ListarPlaylist from './components/ListarPlaylist';
 
- class App extends React.Component{
+export default class App extends React.Component{
    state ={
-
+     paginaAtual:"CriarPlaylist"
    }
-
+   mudarPagina = () => {
+    this.state.paginaAtual === "CriarPlaylist"
+      ? this.setState({ paginaAtual: "ListarPlaylist" })
+      : this.setState({ paginaAtual: "CriarPlaylist"})
+   };
 
   render(){
+    const paginaAtual = () =>{
+      if (this.state.paginaAtual === "CriarPlaylist"){
+        return <CriarPlaylist/>;
+      } else if (this.state.paginaAtual === "ListarPlaylist"){
+        return <ListarPlaylist/>
+      }
+      
+    }
     return (
-      <div className="App">
-        <p>ola mundo</p>
+      <div>
+        {paginaAtual()}
+        <button onClick={this.mudarPagina}>mudar pagina</button>
       </div>
     );
   }
 
 }
-
-export default App;
