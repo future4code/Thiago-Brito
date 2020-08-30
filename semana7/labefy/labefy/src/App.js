@@ -1,7 +1,7 @@
 import React from 'react';
 import {create, config} from "./constants/constants"
-import CriarPlaylist from './components/CriarPlaylist';
-import ListarPlaylist from './components/ListarPlaylist';
+import CriarPlaylist from './components/CriarPlaylist/CriarPlaylist';
+import ListarPlaylist from './components/ListarPlaylist/ListarPlaylist';
 
 export default class App extends React.Component{
    state ={

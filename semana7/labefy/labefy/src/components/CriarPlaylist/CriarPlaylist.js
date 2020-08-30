@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from "axios";
-import {create, config} from "../constants/constants";
+import {create, config} from "../../constants/constants";
+
+
 
 export default class CriarPlaylist extends React.Component{
   state = {
