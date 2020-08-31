@@ -1,12 +1,14 @@
 
 import React from 'react';
 import axios from "axios";
-import {create, config, baseUrl} from "../../constants/constants";
-import {BotaoDeletar} from "./styled"
+import {create, config, baseUrl,} from "../../constants/constants";
+import {BotaoDeletar} from './styled'
+
 
 export default class ListarPlaylist extends React.Component{
    state ={
     listaDePlaylists:[],
+    // listaDeMusicas:[]
     // id:"",
     // nome:"",
    }
@@ -37,20 +39,29 @@ export default class ListarPlaylist extends React.Component{
      });
    };
 
+
+
+
   render() {
     return (
       <div>
         {this.state.listaDePlaylists.map((listaPlaylist)=>{
           return(
-            <p key={listaPlaylist.id}>{listaPlaylist.name}
-          <BotaoDeletar onClick={() => this.deletarPlaylist(listaPlaylist.id)}>
-          {" "}
-          X
-        </BotaoDeletar>
-        </p>
+        <div>
+          <div key={listaPlaylist.id} ><b onClick={()=>this.props.funcaoPlaylist(listaPlaylist.id)}>{listaPlaylist.name}</b>
+            <BotaoDeletar onClick={() => this.deletarPlaylist(listaPlaylist.id)}>
+              {" "}
+              X
+            </BotaoDeletar>
+         </div> 
+
+        </div>
           );
-        })} 
-      </div>
+        })}
+        <div>      
+        <button variant="contained" color="primary" onClick={this.props.funcaoVoltarMenu}>Voltar</button>
+        </div> 
+    </div>
     );
   }
 

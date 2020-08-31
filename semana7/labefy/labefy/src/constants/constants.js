@@ -8,6 +8,7 @@ export const baseUrl="https://us-central1-labenu-apis.cloudfunctions.net/labefy/
 
 export const tracks = 
 "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks";
+// adicionar e visualizar
 
 export const create =
 "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists";

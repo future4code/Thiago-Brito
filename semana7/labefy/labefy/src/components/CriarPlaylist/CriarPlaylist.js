@@ -10,6 +10,7 @@ export default class CriarPlaylist extends React.Component{
    }
    onChangeName = (event) => {
     this.setState({ nome: event.target.value});
+    // console.log (onChangeName)
    }
    criarPlayList = () => {
        const body = {
@@ -22,20 +23,20 @@ export default class CriarPlaylist extends React.Component{
         this.setState({nome:""});
 
        })
-       .catch((error)=>{
-         console.log(error.message);
+       .catch((erro)=>{
+         console.log(erro.message);
        });
-   }  
-
+      }
   render(){
     return (
-      <div className="App">
+      <div>
         <input
         value={this.state.nome}
         onChange={this.onChangeName}
         placeholder="Adicionar Playlist"
         />
-        <button onClick={this.criarPlayList}>Criar Nova Playlist</button>
+        <button funcaoCriar={this.criarPlayList}>Criar Nova Playlist</button>
+        <button onClick={this.props.funcaoListarPlaylist}>mudar pagina</button>
       </div>
     );
   }
