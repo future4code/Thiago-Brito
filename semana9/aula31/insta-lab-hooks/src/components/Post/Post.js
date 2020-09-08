@@ -69,7 +69,7 @@ const Post = (props) => {
         <IconeComContador
           icone={iconeComentario}
           onClickIcone={onClickComentario}
-          // valorContador={numeroComentarios}
+          valorContador={numeroComentarios}
         />
       </PostFooter>
       {caixaDeComentario}
