@@ -7,9 +7,7 @@ import {useHistory} from 'react-router-dom'
 
 export default function ApplicationFormPage() {
   const history = useHistory()
-  const goToApplicationForm = () => {
-    history.push("/application-form")
-  }
+
   const goToHome = () =>{
     history.push("/")
   }
