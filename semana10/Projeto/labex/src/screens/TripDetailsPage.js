@@ -17,7 +17,7 @@ export default function TripDetailsPage() {
     if (token) {
       getTripDetail();
     } else {
-      history.push("/");
+      history.push("/login");
     }
   }, [history]);
 
@@ -34,6 +34,7 @@ export default function TripDetailsPage() {
       .catch((err) => {
         console.log(err.message);
       });
+
   };
   return (
     <div>

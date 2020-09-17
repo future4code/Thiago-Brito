@@ -10,19 +10,22 @@ export default function CreateTripPage() {
   const goToHome = () =>{
     history.push("/")
   }
+  const goToTrip = () =>{
+    history.push("/trips/details")
+  }
 
   useEffect(() => {
     const token = window.localStorage.getItem("token");
     if (token) {
       createTrip();
     } else {
-      history.push("/");
+      history.push("/login");
     }
   }, [history]);
 
   const createTrip = () => {
     axios
-      .get(`${baseUrl}/trip/`, {
+      .post(`${baseUrl}/trip/`, {
         headers: {
           auth: localStorage.getItem("token")
         }
@@ -41,7 +44,8 @@ export default function CreateTripPage() {
       <p>
           Criar viagem
       </p>
-      <button onClick={goToHome}>Logout</button>
+      <button onClick={goToHome}>Home</button>
+      <button onClick={goToTrip}>Detalhes da viagem</button>
     </div>
   );
 }

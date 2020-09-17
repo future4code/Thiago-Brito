@@ -17,8 +17,11 @@ export default function LoginPage() {
 
     if (token) {
       history.push("/trips/create");
+    } else {
+      history.push("/login")
     }
   }, [history]);
+
 
   const handleEmailChange = (event) => {
     setEmailValue(event.target.value);
