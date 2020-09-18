@@ -3,9 +3,10 @@ import {useHistory} from 'react-router-dom'
 import { useForm } from "../hooks/useForm";
 
 
+
 export default function ApplicationFormPage() {
   const history = useHistory()
-  const { form, onChange, resetState } = useForm({
+  const { form, onChange, resetState,setSelectCountry  } = useForm({
     name: "",
     age: 0,
     applicationText: "",
@@ -27,6 +28,17 @@ export default function ApplicationFormPage() {
 
   const goToHome = () =>{
     history.push("/")
+  }
+  const getCountry = () =>{
+    axios.get("https://restcountries.eu/rest/v2/all")
+    .then((response)=>{
+      setSelectCountry(response.data)
+      console.logo(response.dat)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+
   }
   return (
     <div>

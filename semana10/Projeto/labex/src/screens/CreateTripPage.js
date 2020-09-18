@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React,{useEffect,useState} from "react";
 import {useHistory} from 'react-router-dom'
 import axios from "axios";
 import { useForm } from "../hooks/useForm";
@@ -21,7 +21,7 @@ export default function CreateTripPage() {
     onChange(name, value);
   };
 
-  const handleSubmittion = (event) => {
+  const handleSubmission = (event) => {
     event.preventDefault();
 
     console.log(form);
@@ -46,8 +46,16 @@ export default function CreateTripPage() {
   }, [history]);
 
   const createTrip = () => {
-    axios
-      .post(`${baseUrl}/trip/`, {
+    const body = {
+      name:form.name,
+      planet:form.planet,
+      date:form.date,
+      description:form.description,
+      duration:form.duration
+    }
+    
+    axios 
+      .post(`${baseUrl}/trips/`,body, {
         headers: {
           auth: localStorage.getItem("token")
         }
@@ -66,14 +74,15 @@ export default function CreateTripPage() {
       <h1>
           Criar viagem
       </h1>
-      <form onSubmit={handleSubmittion}>
+      <form onSubmit={handleSubmission}>
         <input
           value={form.name}
           name="name"
           onChange={handleInputChange}
           type="text"
-          pattern="[A-Za-z]{3,}"
-          title="Nó minimo 3 letras"
+          pattern="^(?=.{5,})\p*(\s\p *)?$"
+          title="Nó minimo 5 letras"
+          placeholder="nome"
           required
         />
         <input
@@ -81,6 +90,7 @@ export default function CreateTripPage() {
           name="planet"
           onChange={handleInputChange}
           type="text"
+          placeholder="planeta"
           required
         />
         <input
@@ -95,6 +105,7 @@ export default function CreateTripPage() {
           name="description"
           onChange={handleInputChange}
           type="text"
+          placeholder="descrição"
           required
         />
         <input
@@ -102,6 +113,7 @@ export default function CreateTripPage() {
           name="duration"
           onChange={handleInputChange}
           type="number"
+          placeholder="duração"
           required
         />  
         <button>Enviar</button>
