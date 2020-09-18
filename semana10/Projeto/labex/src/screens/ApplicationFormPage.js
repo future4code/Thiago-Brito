@@ -1,21 +1,21 @@
-import React from "react";
+import React,{useState} from "react";
 import {useHistory} from 'react-router-dom'
 import { useForm } from "../hooks/useForm";
-
-
+import axios from "axios"
 
 export default function ApplicationFormPage() {
   const history = useHistory()
-  const { form, onChange, resetState,setSelectCountry  } = useForm({
+  const[selectCountry, setSelectCountry] = useState([])
+  const { form, onChange, resetState, } = useForm({
     name: "",
     age: 0,
     applicationText: "",
     profession: "",
-    country:""
+    country:[]
+
   });
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-
     onChange(name, value);
   };
 
@@ -25,7 +25,6 @@ export default function ApplicationFormPage() {
     console.log(form);
     resetState();
   };
-
   const goToHome = () =>{
     history.push("/")
   }
@@ -33,16 +32,16 @@ export default function ApplicationFormPage() {
     axios.get("https://restcountries.eu/rest/v2/all")
     .then((response)=>{
       setSelectCountry(response.data)
-      console.logo(response.dat)
+      console.logo(response.data)
     })
     .catch((error)=>{
       console.log(error)
     })
-
   }
+
   return (
     <div>
-        <div className="App">
+      <div className="App">
       <form onSubmit={handleSubmittion}>
         <input
           value={form.name}
@@ -51,6 +50,7 @@ export default function ApplicationFormPage() {
           type="text"
           pattern="[A-Za-z]{3,}"
           title="Nó minimo 3 letras"
+          placeholder="nome"
           required
         />
         <input
@@ -59,6 +59,7 @@ export default function ApplicationFormPage() {
           onChange={handleInputChange}
           min="18"
           type="number"
+          placeholder="idade"
           required
         />
         <input
@@ -66,6 +67,8 @@ export default function ApplicationFormPage() {
           name="application"
           onChange={handleInputChange}
           type="text"
+          placeholder="Por que sou um bom candidato"
+
           required
         />
          <input
@@ -73,15 +76,21 @@ export default function ApplicationFormPage() {
           name="profession"
           onChange={handleInputChange}
           type="text"
+          placeholder="Profissão"
           required
         />
-        <input
+        <select
           value={form.country}
           name="country"
           onChange={handleInputChange}
           type="text"
+          placeholder="País"
           required
-        />  
+        >
+          {selectCountry((parametro)=>{
+            return(<option value={parametro.name}>{parametro.name}</option>)
+          })}
+        </select>  
         <button>Enviar</button>
       </form>
     </div>
