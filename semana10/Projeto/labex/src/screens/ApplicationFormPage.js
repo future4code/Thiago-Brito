@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import {useHistory} from 'react-router-dom'
 import { useForm } from "../hooks/useForm";
 import axios from "axios"
@@ -38,6 +38,9 @@ export default function ApplicationFormPage() {
       console.log(error)
     })
   }
+  useEffect(() => {
+    getCountry()
+  }, []);
 
   return (
     <div>
@@ -87,8 +90,8 @@ export default function ApplicationFormPage() {
           placeholder="País"
           required
         >
-          {selectCountry((parametro)=>{
-            return(<option value={parametro.name}>{parametro.name}</option>)
+          {selectCountry.map((parametro)=>{
+            return(<option key={parametro.name}>{parametro.name}</option>)
           })}
         </select>  
         <button>Enviar</button>

@@ -28,7 +28,7 @@ export default function Router() {
                 <Route exact path="/trips/list">
                     <LisTripsPage/>
                 </Route>
-                <Route exact path="/trips/details/">
+                <Route exact path="/trips/details/:id">
                     <TripDetailsPage/>
 
                 </Route>
