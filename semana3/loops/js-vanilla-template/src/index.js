@@ -45,3 +45,17 @@
     //         menor = numero
     // }
     // console.log(`O maior numero é ${maior} e o menor é ${menor}`)
+
+    let array = [1,2,3,-1,-2,-3]
+    let negativo = []
+ numerosNegativos = () => {
+    for(elemento of array){
+        if (elemento < 0){
+            negativo.push("elemento")
+           return numerosNegativos
+        }
+
+ }
+
+}
+console.log(negativo)
