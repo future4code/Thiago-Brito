@@ -1,5 +1,6 @@
 import React from 'react'
 import {useAxiosConfigs} from "../axiosconfig/AxiosConfig"
+import {Div, DivWrapper, DivContainer} from "./styled/styled"
 
 export default function Tasks(props) {
     const { deletTask } = useAxiosConfigs()
@@ -9,8 +10,8 @@ export default function Tasks(props) {
     }
 
     return (
-        <div>
-            <div>
+        <DivContainer>
+            <DivWrapper>
                 <div>Segunda</div>
 
                 {props.tasks.map((list) => {
@@ -18,17 +19,17 @@ export default function Tasks(props) {
                         <>
                             {
                                 list.day === "Segunda" &&
-                                <div >
+                                <Div >
                                    {list.text} 
                                     <button onClick={() => delet(list.id)} >Deletar</button>
-                                </div>
+                                </Div>
                             }
                         </>
                     )
                 })}
-            </div>
+            </DivWrapper>
 
-            <div>
+            <DivWrapper>
                 <div>Terça</div>
 
                 {props.tasks.map((list) => {
@@ -36,16 +37,16 @@ export default function Tasks(props) {
                         <>
                             {
                                 list.day === "Terça" &&
-                                <div> 
+                                <Div> 
                                     {list.text}   <button onClick={() => delet(list.id)} >Deletar</button>
-                                </div>
+                                </Div>
                             }
                         </>
                     )
                 })}
-            </div>
+            </DivWrapper>
 
-            <div>
+            <DivWrapper>
                 <div>Quarta</div>
 
                 {props.tasks.map((list) => {
@@ -53,16 +54,16 @@ export default function Tasks(props) {
                         <>
                             {
                                 list.day === "Quarta" &&
-                                <div >
+                                <Div >
                                     {list.text}    <button onClick={() => delet(list.id)} >Deletar</button>
-                                </div>
+                                </Div>
                             }
                         </>
                     )
                 })}
-            </div>
+            </DivWrapper>
 
-            <div>
+            <DivWrapper>
                 <div>Quinta</div>
 
                 {props.tasks.map((list) => {
@@ -70,16 +71,16 @@ export default function Tasks(props) {
                         <>
                             {
                                 list.day === "Quinta" &&
-                                <div >
+                                <Div >
                                     {list.text} <button onClick={() => delet(list.id)} >Deletar</button>
-                                </div>
+                                </Div>
                             }
                         </>
                     )
                 })}
-            </div>
+            </DivWrapper>
 
-            <div>
+            <DivWrapper>
                 <div>Sexta</div>
 
                 {props.tasks.map((list) => {
@@ -87,32 +88,32 @@ export default function Tasks(props) {
                         <>
                             {
                                 list.day === "Sexta" &&
-                                <div>
+                                <Div>
                                     {list.text} <button onClick={() => delet(list.id)} >Deletar</button>
-                                </div>
+                                </Div>
                             }
                         </>
                     )
                 })}
-            </div>
+            </DivWrapper>
 
-            <div>
+            <DivWrapper>
                 <div>Sábado</div>
                 {props.tasks.map((list) => {
                     return (
                         <>
                             {
                                 list.day === "Sábado" &&
-                                <div>
+                                <Div>
                                    {list.text} <button onClick={() => delet(list.id)} >Deletar</button>
-                                </div>
+                                </Div>
                             }
                         </>
                     )
                 })}
-            </div>
+            </DivWrapper>
 
-            <div>
+            <DivWrapper>
                 <div>Domingo</div>
 
                 {props.tasks.map((list) => {
@@ -120,14 +121,14 @@ export default function Tasks(props) {
                         <>
                             {
                                 list.day === "Domingo" &&
-                                <div>
+                                <Div>
                                    {list.text} <button onClick={() => delet(list.id)} >Deletar</button>
-                                </div>
+                                </Div>
                             }
                         </>
                     )
                 })}
-            </div>
-        </div>
+            </DivWrapper>
+        </DivContainer>
     )
 }
