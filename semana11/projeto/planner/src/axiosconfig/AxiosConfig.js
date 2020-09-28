@@ -31,7 +31,6 @@ export const useAxiosConfigs = () => {
                 console.log(error)
             })
     }
-
     useEffect(() => {
         getTasks()
     }, [])

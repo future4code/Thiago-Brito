@@ -34,7 +34,7 @@ export default function Planner(props) {
     }
     useEffect(() => {
         props.getTasks()
-    }, [])
+    },)
 
     return (
         <main className="App">
@@ -44,6 +44,7 @@ export default function Planner(props) {
                     name="day"
                     value={form.day}
                     onChange={handleInputChange}
+                    data-testid={'bananinha'}
                 >
                     <option value="none">Selecione um dia da semana</option>
                     <option value="Segunda" >Segunda</option>
