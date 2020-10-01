@@ -4,7 +4,7 @@ export const goToFeed = (history) =>{
 export const goToLogin = (history) =>{
     history.push('/login')
 };
-export const goToPost = (history) =>{
+export const goToPost = (history, id) =>{
     history.push('/post')
 };
 export const goToSignup = (history) =>{
