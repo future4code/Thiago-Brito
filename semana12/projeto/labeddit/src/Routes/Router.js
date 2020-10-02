@@ -10,7 +10,7 @@ import PostPage from "../Screens/PostPage/PostPage"
    return(
     <BrowserRouter>
     <Switch>
-      <Route exact path={'/login'}>
+      <Route exact path={'/'}>
         <LoginPage/>
       </Route>
     </Switch>
