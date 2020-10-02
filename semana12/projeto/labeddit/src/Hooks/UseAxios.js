@@ -4,7 +4,7 @@ import { useState } from "react"
 
 export const useAxios = () => {
     const [posts, setPosts] = useState([])
-    // const [details, setDetails] = useState([])
+
 
     const token = localStorage.getItem("token")
     const getPosts = () => {

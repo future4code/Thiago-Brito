@@ -1,15 +1,13 @@
 import axios from 'axios';
 // import { TextField } from '@material-ui/core';
 import React from 'react';
-import { BaseUrl } from '../../Constants/Urls';
-import UseAxios from '../../Hooks/UseAxios';
-import UseForm from '../../Hooks/UseForm';
+import useForm from '../../Hooks/UseForm';
 // import TextField from '@material-ui/core/TextField'
 
 
 
 export default function LoginPage() {
-  const {form, onChange, resetState} = UseForm({email:"", password:""})
+  const {form, onChange, resetState} = useForm({email:"", password:""})
   
   const userLogin =()=>{
     const body = {email:form.email, password:form.password}
