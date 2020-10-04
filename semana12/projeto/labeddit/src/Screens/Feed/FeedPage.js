@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useAxios } from '../../Hooks/UseAxios';
+import { useAxios } from '../../Hooks/useAxios';
 import { goToPost } from "../../Routes/Coordinator"
 import { useHistory } from "react-router-dom"
 import axios from 'axios';
