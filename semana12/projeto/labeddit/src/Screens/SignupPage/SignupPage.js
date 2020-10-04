@@ -1,13 +1,12 @@
-import Axios from 'axios';
+import axios from 'axios';
 import React from 'react';
-import useForm from '../../Hooks/UseForm';
-
+import useForm from '../../Hooks/useForm';
 
 export default function SignupPage() {
   const {form, onChange, resetState} = useForm({email:"", password:"", username:""})
   const Sign = () => {
     const body = {email:form.email, password:form.password, username:form.username}
-    Axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labEddit/signup", body)
+    axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labEddit/signup", body)
     .then((response)=>{
       console.log(response)
       window.localStorage.setItem("token", response.data.token)

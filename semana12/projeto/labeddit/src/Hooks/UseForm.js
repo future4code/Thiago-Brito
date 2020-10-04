@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 
-export default function UseForm (initialState) {
+export default function useForm (initialState) {
 
     const [form, setForm] = useState(initialState)
     

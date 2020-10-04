@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import { useParams } from 'react-router-dom';
-import UseForm from '../../Hooks/UseForm';
+import UseForm from '../../Hooks/useForm';
 
 export default function PostPage() {
   const { form, onChange, resetState } = UseForm({ text: "" })
