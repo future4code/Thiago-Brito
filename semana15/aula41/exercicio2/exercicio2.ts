@@ -1,4 +1,4 @@
-function obterEstatisticas: {
+function obterEstatisticas(numeros:number[]) {
 
     const numerosOrdenados = numeros.sort(
         (a, b) => a - b
@@ -18,3 +18,8 @@ function obterEstatisticas: {
 
     return estatisticas
 }
+console.log(obterEstatisticas([2, 4, 6]))
+
+// b
+// numerosOrdenandos e uma array de numeros, estatisticas é um objeto que recebe um array de numeros.
+// c)
