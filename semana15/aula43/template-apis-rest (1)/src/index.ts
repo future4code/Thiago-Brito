@@ -82,7 +82,7 @@ app.get("/users", (req: Request, res: Response): void =>{
     }
 });
 // 2)
-app.get("/users/:type", (req: Request, res: Response): void =>{
+app.get("/users/type/:type", (req: Request, res: Response): void =>{
 
     try{
         if(!(req.params.type.toUpperCase() in UserType)){
@@ -118,16 +118,16 @@ app.get("/users/query", (req: Request, res: Response): void =>{
 // a)Query
 // b) linha 105 a 108
 
-
-app.post("/users", (req: Request, res: Response): void=>{
+// 4)
+app.post("/users/:id", (req: Request, res: Response): void=>{
     try{
         const {id, name, email, age, type} = req.body;
         const user = {
-            id,
-            name,
-            email,
-            age,
-            type
+            id:id,
+            name:name,
+            email:email,
+            age:age,
+            type:type
         }
 
         users.push(user);
@@ -138,6 +138,67 @@ app.post("/users", (req: Request, res: Response): void=>{
         });
     }
 })
+// a)Nada mudou
+// b) Não é apropriado pq o post que cria o usuario, o put só edita
+
+// 5)
+app.put("/users/:id", (req: Request, res: Response): void=>{
+    try{
+        const {id, name, email, age, type} = req.body;
+        const user = {
+            id:id,
+            name:name,
+            email:email,
+            age:age,
+            type:type
+        }
+
+        users.push(user);
+        res.status(200).send({message: "User edited successfully"});
+    }catch(error){
+        res.status(400).send({
+            message: "Error editing for users"
+        });
+    }
+})
+// 6)
+app.patch("/users/:id", (req: Request, res: Response): void=>{
+    try{
+        const {id, name, email, age, type} = req.body;
+        const user = {
+            id:id,
+            name:name,
+            email:email,
+            age:age,
+            type:type
+        }
+
+        users.push(user);
+        res.status(200).send({message: "User edited successfully"});
+    }catch(error){
+        res.status(400).send({
+            message: "Error inserting for users"
+        });
+    }
+})
+// 7)
+app.delete("/users/:id", (req: Request, res: Response): void=>{
+    let errorCode:number=400
+    try{
+        const userIndex = users.findIndex((u)=>u.id===Number(req.params.id))
+        if(userIndex === -1 ){
+            errorCode=404
+            throw new Error()
+        }
+        users.splice(userIndex, 1);
+        res.status(200).send({message: "User deleted successfully"});
+    }catch(error){
+        res.status(400).send({
+            message: "Could not delete user"
+        });
+    }
+})
+
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
