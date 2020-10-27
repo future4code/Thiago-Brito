@@ -81,3 +81,73 @@ LIMIT 3;
 d)
 SELECT AVG(salary), gender FROM Actor
 GROUP BY gender;
+
+6)
+a)
+ALTER TABLE Movie ADD playing_limit_date DATE;
+b)
+ALTER TABLE Filmes CHANGE evaluation evaluation FLOAT
+c)
+UPDATE Filmes
+SET playing_limit_date = "2020-10-28"
+WHERE id = "001";
+
+UPDATE Filmes
+SET playing_limit_date = "2020-10-28"
+WHERE id = "002";
+
+UPDATE Filmes
+SET playing_limit_date = "2020-09-28"
+WHERE id = "003";
+
+d)O update nao funciona visto que depois de deletado o valor e null e nao pode ser editado dessa forma.
+
+7)
+a)
+SELECT COUNT(*)
+FROM Filmes
+WHERE evaluation > 7.5;
+
+b)
+SELECT AVG (evaluation)
+FROM Filmes;
+
+c)
+SELECT COUNT(*)
+FROM Filmes WHERE playing_limit_date > CURDATE();
+
+d)
+SELECT COUNT(*) FROM Movie WHERE release_date < CURDATE();
+
+e)
+SELECT MAX(evaluation)
+FROM Filmes;
+
+f)
+SELECT MIN(evaluation)
+FROM Filmes;
+
+8)
+a)
+SELECT *
+FROM Filmes
+ORDER BY name ASC;
+
+b)
+SELECT *
+FROM Filmes
+ORDER BY name DESC
+LIMIT 5;
+
+c)
+SELECT *
+FROM Filmes
+WHERE playing_limit_date >= CURDATE() AND release_date <= CURDATE()
+ORDER BY release_date DESC 
+LIMIT 3;
+
+d)
+SELECT *
+FROM Filmes
+ORDER BY evaluation DESC
+LIMIT 3;
