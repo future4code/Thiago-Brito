@@ -3,6 +3,9 @@ import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
 import searchActorByName from "./data/searchActorByName";
+import {getActorById} from "./endpoints/getActorById"
+import { updateActorSalary } from "./endpoints/updateActorSalary";
+import { delActor } from "./endpoints/delActor";
 
 /**************************************************************/
 
@@ -26,6 +29,9 @@ export const connection = knex({
 const app = express();
 
 app.use(express.json());
+app.get("/actors/:id", getActorById );
+app.post("/actor", updateActorSalary );
+app.delete("/actor/:id", delActor)
 
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {
@@ -53,3 +59,5 @@ async function testEndpoint(req:Request, res:Response): Promise<void>{
   }
   
 searchActorByName("a");
+
+
