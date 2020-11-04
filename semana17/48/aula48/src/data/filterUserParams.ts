@@ -1,9 +1,9 @@
 import { connection } from "..";
 
-export const filterUser = async (name:string): Promise<void> =>{
+export const filterUserParams = async (type:string): Promise<void> =>{
     const result = await connection.raw(`
       SELECT * FROM aula48_exercicio
-      WHERE name LIKE "%${name}%"
+      WHERE type LIKE "%${type}%"
     `)
     return result [0]
 }
