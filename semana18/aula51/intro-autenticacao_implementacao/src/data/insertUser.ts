@@ -5,13 +5,21 @@ export default async function insertUser(
     name: string,
     nickname: string,
     email: string,
-    password: string
+    password: string,
+    role:USER_ROLES
 ) {
     await connection.insert({
         id,
         name,
         nickname,
         email,
-        password
+        password,
+        role
     }).into('to_do_list_users')
+}
+
+export enum USER_ROLES{
+    NORMAL="NORMAL",
+    ADMIN="ADMIN"
+
 }

@@ -2,6 +2,7 @@ import { Request, response, Response } from "express"
 import { request } from "http"
 import selectUserByEmail, { User } from "../data/selectUserByEmail"
 import { generateToken } from "../services/authenticator"
+import { compare } from "../services/hashManager"
 
 export default async function login(
    req: Request,
@@ -25,15 +26,18 @@ export default async function login(
          message = "Usuário não encontrado ou senha incorreta"
          throw new Error(message)
       }
+      const passwordIsCorrect:boolean = await compare (password,user.password)
 
-      if (user.password !== password) {
+      if (!passwordIsCorrect) {
          res.statusCode = 404
          message = "Usuário não encontrado ou senha incorreta"
          throw new Error(message)
       }
 
+      
       const token: string = generateToken({
-         id: user.id
+         id: user.id,
+         role:user.role
       })
 
       res.send({

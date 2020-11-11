@@ -1,4 +1,5 @@
 import { connection } from ".."
+import { USER_ROLES } from "./insertUser"
 
 export type User = {
    id: string,
@@ -6,6 +7,7 @@ export type User = {
    nickname: string,
    email: string,
    password: string
+   role:USER_ROLES
 }
 
 export default async function selectUserByEmail(
@@ -22,6 +24,7 @@ export default async function selectUserByEmail(
          nickname: result[0].nickname,
          email: result[0].email,
          password: result[0].password,
+         role:result[0].role
       }
 
    } catch (error) {

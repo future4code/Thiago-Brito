@@ -14,7 +14,8 @@ export default async function createUser(
             !req.body.name ||
             !req.body.nickname ||
             !req.body.email ||
-            !req.body.password
+            !req.body.password||
+            !req.body.role
         ) {
           throw new Error('Preencha os campos "name","nickname", "email" e "password"')
         }
@@ -28,11 +29,13 @@ export default async function createUser(
             req.body.name,
             req.body.nickname,
             req.body.email,
-            cypherPassword
+            cypherPassword,
+            req.body.role
         )
 
          const token: string = generateToken({
-            id
+            id,
+            role:req.body.role
          })
 
         res

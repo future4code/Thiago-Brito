@@ -1,33 +1,24 @@
 import { Request, Response } from "express";
+import deleteUsersById from "../data/deleteUsersById";
 import selectUserById from "../data/selectUserById";
 import { AuthenticationData, getTokenData } from "../services/authenticator";
 
-export default async function getUserById(
+export default async function deleteUserById(
    req: Request,
    res: Response
 ) {
    try {
       const token = req.headers.authorization as string;
       const tokenData = getTokenData(token)
-      
-      if (tokenData.role !== "NORMAL") {
-         throw new Error("Only a normal user can access this funcionality");
+        const user = await deleteUsersById(tokenData.id)
+
+      if (tokenData.role === "NORMAL") {
+         throw new Error("Only an Admin user can access this funcionality");
        }
-   
-      const user = await selectUserById(tokenData.id)
-       
+       const id = req.params.id
+       await deleteUsersById(id)
 
-
-      if (!user) {
-         throw new Error("User not found")
-      }
-
-      res.status(200).send({
-         id: user.id,
-         email: user.email,
-         role: user.role,
-      })
-
+        res.sendStatus(200)
    } catch (error) {
       res.status(400).send({
          message: error.message || error.sqlMessage,
