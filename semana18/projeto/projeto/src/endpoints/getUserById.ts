@@ -17,9 +17,10 @@ export default async function getUserById(
       
       const user = await selectUserById(req.params.id as string)
       if (!user.length){
-         throw new Error ("Usuário não encontrado")
+         console.log(req.params.id)
+            throw new Error ("Usuário não encontrado")
       }     
-      console.log(req.params.id)
+      
       res.status(200).send(
           user
          

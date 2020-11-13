@@ -32,7 +32,7 @@ export default async function createUser(
         )
 
          const token: string = generateToken({
-            id,
+            id_user:id,
             role: req.body.role
          })
 

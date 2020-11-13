@@ -1,14 +1,11 @@
 import { connection } from "..";
 
 export default async function selectRecipeById(
-    id: string
+id_recipe:string
 ): Promise<any> {
-    const result = await connection.raw(`
-        SELECT tasks.*, nickname FROM to_do_list_tasks AS tasks
-        JOIN to_do_list_users AS users
-        ON author_id = users.id
-        WHERE tasks.id = '${id}';
-    `)
+    const result = await connection("Cookenu_Recipes")
+    .select ('*')
+    .where({id_recipe})
 
-    return result[0][0]
+    return result[0]
 }

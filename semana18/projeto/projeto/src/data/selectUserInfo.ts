@@ -10,7 +10,7 @@ export default async function selectUserInfo(
             WHERE role = '${role}';
         `)
 
-        return result[0]
+        return result[0][0]
         
 
 

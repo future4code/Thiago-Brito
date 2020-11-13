@@ -10,7 +10,7 @@ export function generateToken(
       payload,
       process.env.JWT_KEY as string,
       {
-         expiresIn: "24min"
+         expiresIn: "124min"
       }
    )
 }

@@ -7,6 +7,7 @@ import getUserById from './endpoints/getUserById'
 import getRecipeById from './endpoints/getRecipeById'
 import login from './endpoints/login'
 import getUserProfile from './endpoints/getUserProfile'
+import createRecipe from './endpoints/createRecipe'
 
 dotenv.config()
 
@@ -33,9 +34,9 @@ app.get("/", async function(req,res){
 app.post('/user/signup', createUser)
 app.post("/user/login", login)
 app.get('/user/profile', getUserProfile)
-app.get('/bleus/:id', getUserById)
-// app.get('/recipe/', getRecipe)
-// app.get('/recipe/:id', getRecipeById)
+app.get('/user/:id', getUserById)
+app.post('/recipe',createRecipe)
+app.get('/recipe/:id', getRecipeById)
 
 
 app.listen(3003, () => {

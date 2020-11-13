@@ -7,7 +7,8 @@ export default async function insertUser(
     email: string,
     password: string,
     role: USER_ROLES
-) {
+    ): Promise<any> {
+
     await connection.insert({
         id_user,
         name,
