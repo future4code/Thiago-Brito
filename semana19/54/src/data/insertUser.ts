@@ -1,8 +1,8 @@
-import {connection} from "..";  
+import {connection} from "../connection/knex";  
 import { USER_ROLES } from "../types/type";
 
 export default async function insertUser
-( id:string,
+(   id:string,
     name: string,
     email: string,
     password: string,
@@ -24,3 +24,4 @@ export default async function insertUser
       
   }
 }   
+

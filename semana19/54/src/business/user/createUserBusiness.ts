@@ -37,12 +37,13 @@ export const createUserBusiness = async(input:any):Promise<any> => {
             role:input.role
         })
         console.log(token)
-        return token
+        return token;
     
     } catch (error) {
         if(error.code === 1048){
             throw new Error ("User already exist")
         }    
     }
-    return" "
+    
+    return ""
 }

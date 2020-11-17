@@ -13,7 +13,7 @@ export default async function createUser(req: Request, res: Response) {
 
         const token = await createUserBusiness(input);
 
-        res.status(200).send({ token });
+        res.status(200).send({ token, message:"usuario_criado" });
 
     } catch (error) {
         res.status(400).send({ error: error.message });
