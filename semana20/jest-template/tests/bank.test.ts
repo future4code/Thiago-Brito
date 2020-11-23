@@ -17,7 +17,7 @@ test("Testing balance greater than value", () => {
 })
 
 
-test("Testing balance equal to value", () => {
+test("Testing balance is equal to value", () => {
 	const user: User = {
 		name: "Astrodev",
 		balance: 50
